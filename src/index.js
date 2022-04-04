@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ResetStyle, GlobalStyle } from './globalStyle';
 
+
+
 ReactDOM.render(
   <React.StrictMode>
     <ResetStyle />
