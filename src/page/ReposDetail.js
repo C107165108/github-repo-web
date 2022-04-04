@@ -34,7 +34,7 @@ export default function ReposDetail(props) {
     // style
     const loadingImgStyle = { width: 30, }
     const loadingStyle = { display: 'flex', justifyContent: 'center', alignItem: 'center', marginTop: 50 }
-    const detailStyle = { width: '60%', padding: 32, }
+    const detailStyle = { width: '60%', padding: 32, margin: '0 auto',height:'90vh' }
     const titleContentStyle = { display: 'flex', justifyContent: 'space-between', alignItem: 'baseline', textDecoration: 'none', color: '#333333', flexWrap: 'wrap' }
     const titleStyle = { fontSize: 20, fontWeight: '600', marginRight: 16 }
     const visibilityStyle = { border: '#aaa 0.5px solid', borderRadius: 20, padding: '4px 12px', marginRight: 10 }

@@ -9,8 +9,7 @@ export default function ReposList(props) {
     const { repos, getMoreData, perpage, reposLength } = props;
 
     // style
-    const windowHeight = window.innerHeight;
-    const listStyle = { width: '100%', height: windowHeight - 100, overflow: "auto", display: 'flex', alignItems: 'center', flexDirection: 'column' };
+    const listStyle = { width: '100%', height:'90vh', overflow: "auto", display: 'flex', alignItems: 'center', flexDirection: 'column' };
     const ItemStyle = { textDecoration: 'none', color: '#333333' };
     const loadingImgStyle = { width: 20 };
     const loadingStyle = { display: 'flex', justifyContent: 'center' };

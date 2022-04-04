@@ -103,25 +103,27 @@ export default function MainPage() {
     const detailPath = `users/${apiUserName}/repos/:name`;
 
     // style
-    const windowHeight = window.innerHeight;
-    const bodyStyle = { width: '100%', height: windowHeight - 75, display: 'flex', alignItems: 'center', flexDirection: 'column' };
+    const bodyStyle = { width: '100%', height: '100vh', display: 'flex', alignItems: 'center', flexDirection: 'column', flex: 1 };
 
     return (
         <div>
+            <Router >
 
-            <Header userName={userName} homePath={homePath} />
+                <Header userName={userName} homePath={homePath} />
 
-            <div style={bodyStyle}>
-                <Router>
-                    <Routes>
-                        <Route path='/' element={<SearchPage setApiUserName={setApiUserName} homePath={homePath} fetchData={fetchData} getDataLength={getDataLength} />} />
-                        <Route path={homePath} element={<ReposList repos={repos} userName={userName} getMoreData={getMoreData} perpage={perpage} reposLength={reposLength} />} />
-                        <Route path={detailPath} element={<ReposDetail repos={repos} apiUserName={apiUserName} userName={userName} />} />
-                    </Routes>
-                </Router>
-            </div>
+                <Routes style={bodyStyle}>
+                    <Route path='/' element={<SearchPage setApiUserName={setApiUserName} homePath={homePath} fetchData={fetchData} getDataLength={getDataLength} />} />
+                    <Route path={homePath} element={<ReposList repos={repos} userName={userName} getMoreData={getMoreData} perpage={perpage} reposLength={reposLength} />} />
+                    <Route path={detailPath} element={<ReposDetail repos={repos} apiUserName={apiUserName} userName={userName} />} />
+                </Routes>
 
-            <Footer userName={userName} />
+                <Footer userName={userName} />
+            </Router>
+
+
+
+
+
 
         </div>
     );
