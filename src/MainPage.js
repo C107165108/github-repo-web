@@ -11,7 +11,7 @@ import Footer from "./component/Footer";
 
 export default function MainPage() {
 
-    const [apiUserName, setApiUserName] = useState('')
+    const [apiUserName, setApiUserName] = useState('C107165108')
     const [repos, setRepos] = useState([]);
     const [userName, setUserName] = useState('');
     const [perpage, setPerPage] = useState(10);
