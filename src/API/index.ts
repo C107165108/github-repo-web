@@ -36,3 +36,11 @@ export const fetchDetail = ({
     const url = `repos/${userName}/${repoName}`
     return req(url)
 }
+
+export const fetchDetailBranches = ({
+    userName,
+    repoName,
+}: FetchDetailType) => {
+    const url = `repos/${userName}/${repoName}/branches`
+    return req(url)
+}

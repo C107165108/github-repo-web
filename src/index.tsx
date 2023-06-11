@@ -3,14 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { ResetStyle, GlobalStyle } from './globalStyle';
+import { GlobalStyle } from './globalStyle';
 import { Provider } from 'react-redux';
 import { store } from './slices/index'
 
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
-      <ResetStyle />
       <GlobalStyle />
       <App />
     </React.StrictMode>

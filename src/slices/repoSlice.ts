@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { fetchData, fetchDetail, fetchUser } from '../API/index'
+import { fetchData, fetchDetail, fetchUser, fetchDetailBranches } from '../API/index'
 import { FetchUserType, FetchDetailType, FetchDataType } from '../API/index'
 
 export const getRepoCount = createAsyncThunk('repo/fetchUser', async (body: FetchUserType) => {
@@ -12,6 +12,10 @@ export const getRepo = createAsyncThunk('repo/fetchData', async (body: FetchData
 
 export const getRepoDetail = createAsyncThunk('repo/fetchDetail', async (body: FetchDetailType) => {
   return await fetchDetail(body)
+})
+
+export const getRepoMainBranch = createAsyncThunk('repo/fetchDetailBranches', async (body: FetchDetailType) => {
+  return await fetchDetailBranches(body)
 })
 
 interface CounterState {
@@ -30,7 +34,12 @@ interface CounterState {
     stargazers_count: string,
     html_url: string,
     language: string,
+    homepage: string,
   },
+  branchs: Array<{
+    name: string,
+  }>,
+
   detailLoading: Boolean,
 }
 
@@ -47,7 +56,11 @@ const initialState: CounterState = {
     stargazers_count: '',
     html_url: '',
     language: '',
+    homepage: '',
   },
+  branchs: [{
+    name: '',
+  }],
   detailLoading: false,
 }
 
@@ -75,6 +88,9 @@ const repoSlice = createSlice({
     builder.addCase(getRepoDetail.fulfilled, (state, { payload }) => {
       state.detail = payload.data
       state.detailLoading = false
+    });
+    builder.addCase(getRepoMainBranch.fulfilled, (state, { payload }) => {
+      state.branchs = payload.data
     });
     builder.addCase(getRepoDetail.pending, (state) => {
       state.detailLoading = true

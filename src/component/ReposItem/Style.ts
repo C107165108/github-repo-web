@@ -8,13 +8,14 @@ export const ItemContent = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: baseline; 
-    width: 700px;
-    max-width: 700px;
+    width: 65vw;
+    max-width: 1000px;
 `
 
 export const Itemtitle = styled.div`
     font-size: 18px;
     font-weight: 600;
+    color: #000;
 `
 export const ItemStarContent = styled.div`
     display: flex;
@@ -29,4 +30,5 @@ export const ItemStarImg = styled.img`
 
 export const ItemStar = styled.div`
     font-size: 16px;
+    color: #000;
 `

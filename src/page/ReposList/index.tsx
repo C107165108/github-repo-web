@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import  { useEffect } from "react"
-import { Link ,useParams} from 'react-router-dom'
+import { useEffect } from "react"
+import { useParams } from 'react-router-dom'
 import { useAppSelector, useAppDispatch } from '../../hook'
 import InfiniteScroll from "react-infinite-scroll-component"
 import { RootState } from '../../slices'
@@ -43,15 +43,16 @@ const ReposList = () => {
                     </Styled.LoadingStyle>
                     : ''}
                 scrollableTarget="scrollableDiv"
+            // style={{ width: '80%' }}
             >
                 {repos.map((repo) =>
-                    <Link
+                    <Styled.ItemStyle
                         key={repo.id}
                         to={`${repo.name}`}
                         style={{ textDecoration: 'none' }}
                     >
                         <ReposItem key={repo.id} repo={repo} />
-                    </Link>
+                    </Styled.ItemStyle>
                 )}
             </InfiniteScroll>
         </Styled.ListStyle >
