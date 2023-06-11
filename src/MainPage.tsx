@@ -5,18 +5,18 @@ import ReposList from "./page/ReposList";
 import ReposDetail from "./page/ReposDetail";
 import Header from "./component/Header";
 import { Footer } from "./component/Footer";
-export default function MainPage() {
 
+export default function MainPage() {
     const userName = useAppSelector((state => state.repo.userName))
     // path
     const homePath = `users/:userName/repos`;
     const detailPath = `users/:userName/repos/:repoName`;
-
+    console.log(userName)
     return (
         <div>
-            <Router >
+            <Router>
                 <Header userName={userName} homePath={homePath} />
-                <Routes >
+                <Routes>
                     <Route path='/' element={<SearchPage />} />
                     <Route path={homePath} element={<ReposList />} />
                     <Route path={detailPath} element={<ReposDetail />} />

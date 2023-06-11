@@ -2,11 +2,12 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom';
 export const ListStyle = styled.div`
   width: 100%;
-  height:90vh;
+  height: 100vh;
   overflow: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin: 80px auto;
 `
 
 export const ItemStyle = styled(Link)`
@@ -14,9 +15,10 @@ export const ItemStyle = styled(Link)`
   color: '#333333';
 `
 export const LoadingImgStyle = styled.img`
-  width: 20;
+  width: 30px;
 `
 export const LoadingStyle = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
 `

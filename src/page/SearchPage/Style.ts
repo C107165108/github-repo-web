@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const SearchContent = styled.div`
   width: 100%;
-  height: 88vh;
   text-align: center;
+  margin: 35vh auto;
 `
 export const Content = styled.div`
    width: 100%;
@@ -23,6 +23,9 @@ export const Input = styled.input`
   border: #808080 1px solid;
   border-radius: 30px;
   margin-right: 10px;
+  &:focus {
+    outline: #00b33c 1px solid;
+    }
 `
 export const Button = styled.button`
   border-radius: 30px;
@@ -32,7 +35,8 @@ export const Button = styled.button`
   font-weight: 600;
   font-size: 16px;
   width: 80px;
-  text-align: center
+  text-align: center;
+  border: none;
 `
 
 
