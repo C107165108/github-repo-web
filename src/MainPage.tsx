@@ -7,11 +7,11 @@ import Header from "./component/Header";
 import { Footer } from "./component/Footer";
 
 export default function MainPage() {
-    const userName = useAppSelector((state => state.repo.userName))
+    const userName = useAppSelector((state => state.repo.userName)) ?? window?.location?.pathname?.split('/')?.[2] ?? ''
     // path
     const homePath = `users/:userName/repos`;
     const detailPath = `users/:userName/repos/:repoName`;
-    console.log(userName)
+
     return (
         <div>
             <Router>

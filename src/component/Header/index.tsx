@@ -7,9 +7,10 @@ type Type = {
 }
 
 export default function Header({ userName, homePath }: Type) {
+
     return (
         <Fragment>
-            {userName !== '' && <Link to={homePath}>
+            {userName !== '' && window.location.pathname !== '/' && <Link to={homePath}>
                 <Styled.Header >
                     <Styled.UserName >{userName}</Styled.UserName>
                 </Styled.Header >
