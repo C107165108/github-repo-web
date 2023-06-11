@@ -12,9 +12,9 @@ export const Loading = styled.div`
 export const Detail = styled.div`
   width: 65vw;
   max-width: 1000px;
-  height: 90vh;
+  min-height: 68vh;
   padding: 32px;
-  margin: 80px auto 72px;
+  margin: 80px auto 32px;
 `
 export const Box = styled.div`
   display: flex;

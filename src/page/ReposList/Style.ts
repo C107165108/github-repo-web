@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom';
 export const ListStyle = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 74vh;
   overflow: auto;
   display: flex;
   align-items: center;
