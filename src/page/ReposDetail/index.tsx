@@ -7,6 +7,8 @@ import * as Styled from './Style'
 import ReactMarkdown from 'react-markdown'
 import useGetMarkDown from '../../hook/useGetMarkDown'
 import rehypeRaw from 'rehype-raw'
+import { Header } from "../../component/Header"
+import { Footer } from "../../component/Footer"
 
 export default function ReposDetail() {
     const dispatch = useAppDispatch()
@@ -36,6 +38,7 @@ export default function ReposDetail() {
 
     return (
         <>
+            <Header userName={userName} homePath={`/users/${userName}/repos`} />
             {isLoading ? (
                 <Styled.Loading >
                     <Styled.LoadingImg src='https://cdn-icons-png.flaticon.com/512/6356/6356630.png' alt='loading' />
@@ -80,6 +83,7 @@ export default function ReposDetail() {
                     }
                 </Styled.Detail >
             )}
+            <Footer userName={userName} />
         </>
     )
 }

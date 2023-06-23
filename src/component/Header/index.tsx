@@ -6,11 +6,11 @@ type Type = {
     homePath: string,
 }
 
-export default function Header({ userName, homePath }: Type) {
+export const Header = ({ userName, homePath }: Type) => {
 
     return (
         <Fragment>
-            {userName !== '' && window.location.pathname !== '/' && <Link to={homePath}>
+            {userName !== '' && <Link to={homePath}>
                 <Styled.Header >
                     <Styled.UserName >{userName}</Styled.UserName>
                 </Styled.Header >
