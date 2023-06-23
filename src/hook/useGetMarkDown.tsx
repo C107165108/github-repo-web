@@ -8,7 +8,7 @@ const useGetMarkDown = (userName: string | undefined, repoName: string | undefin
         fetch(url)
             .then(res => res.text())
             .then(text => text !== '404: Not Found' ? setData(text) : setData(undefined))
-            .catch(err => console.log(err))
+            .catch(err => setData(undefined))
     }
 
     return data

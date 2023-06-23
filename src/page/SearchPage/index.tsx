@@ -12,8 +12,10 @@ export const SearchPage = () => {
     const [userName, setUserName] = useState<string>('')
 
     const onSubmit = () => {
-        dispatch(storeSearch(userName))
-        navigate(`users/${userName}/repos`)
+        if (userName !== '') {
+            dispatch(storeSearch(userName))
+            navigate(`users/${userName}/repos`)
+        }
     }
 
     const enterSubmit = (e: React.KeyboardEvent<object>) => {

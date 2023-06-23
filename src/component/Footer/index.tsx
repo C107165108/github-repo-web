@@ -5,7 +5,7 @@ export const Footer = ({ userName }: { userName: String | undefined }) => {
 
     return (
         <Fragment>
-            {userName !== '' && window.location.pathname !== '/' &&
+            {userName !== '' &&
                 <Styled.FooterContent>
                     <Styled.FooterTitle >gitHub repository user / {userName}</Styled.FooterTitle>
                 </Styled.FooterContent>

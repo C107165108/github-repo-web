@@ -39,7 +39,7 @@ interface CounterState {
   branchs: Array<{
     name: string,
   }>,
-
+  dataError: Boolean,
   detailLoading: Boolean,
 }
 
@@ -61,6 +61,7 @@ const initialState: CounterState = {
   branchs: [{
     name: '',
   }],
+  dataError: false,
   detailLoading: false,
 }
 
@@ -80,10 +81,12 @@ const repoSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getRepoCount.fulfilled, (state, { payload }) => {
-      state.repoCount = payload.data.public_repos
+      state.repoCount = payload?.data?.public_repos ?? 0
+      state.dataError = payload?.name === 'Error'
     });
     builder.addCase(getRepo.fulfilled, (state, { payload }) => {
       state.data = state.data.concat(payload.data)
+      state.dataError = payload?.name === 'Error'
     });
     builder.addCase(getRepoDetail.fulfilled, (state, { payload }) => {
       state.detail = payload.data

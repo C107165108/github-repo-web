@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+
 export const ListStyle = styled.div`
   width: 100%;
   min-height: 74vh;

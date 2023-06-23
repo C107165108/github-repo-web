@@ -1,4 +1,4 @@
-import { req } from './axios';
+import { req } from './axios'
 
 export type FetchUserType = {
     userName: string | undefined,

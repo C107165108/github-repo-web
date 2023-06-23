@@ -9,5 +9,5 @@ const instance = axios.create({
 export const req = async (url: string) => {
     return await instance.get(url)
         .then((res) => res)
-        .catch((err) => Promise.reject(err))
+        .catch((err) => err)
 }
