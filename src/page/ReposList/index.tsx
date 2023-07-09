@@ -27,8 +27,6 @@ const ReposList = () => {
         dispatch(storePage({ page: 1 }))
     }, [])
 
-    // navigate('/404')
-    console.log(dataError, repos)
     useEffect(() => {
         dataError && navigate('/404')
     }, [dataError])
