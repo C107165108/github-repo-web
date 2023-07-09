@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 
 export const ListStyle = styled.div`
   width: 100%;
-  min-height: 74vh;
+  height: 82vh;
   overflow: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 80px auto;
+  margin: 80px auto 20px;
 `
 
 export const ItemStyle = styled(Link)`
